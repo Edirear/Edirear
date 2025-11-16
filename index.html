@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="C-7skUyK_xiTDnir9LFnMM4zNwW86KkjIhwz34m2ihk" />
+    <meta name="google-site-verification" content="WS5xWJ_f6GwUgPARRXC2h4DmqEOnS6W6RRe7vToh96U" />
+    <meta name="google-site-verification" content="19Y8-PGH2NSqJQ0gCsvtsaWKKuAuWkB-Vbh34aYegxg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Edirear</title>
+
+    <!-- Website Logo (Favicon + Schema) -->
+    <link rel="icon" type="image/png" href="Edirear.png">
+    <link rel="apple-touch-icon" href="Edirear.png">
+    <meta property="og:image" content="Edirear.png">
+
+    <!-- Schema Markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Edirear",
+      "url": "https://edirear.github.io",
+      "logo": "Edirear.png",
+      "sameAs": [
+        "https://www.youtube.com/@edirear",
+        "https://www.instagram.com/edirear",
+        "https://twitter.com/edirear"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            min-height: 100vh;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: #00ff00;
+            font-size: 1.5rem;
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .info-box {
+            background: #111;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: left;
+            border: 1px solid #333;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.1);
+        }
+
+        .owner-info {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            color: white;
+        }
+
+        .company-info {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            color: white;
+        }
+
+        .terms-info {
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.4;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: black;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary:hover {
+            background: #00ff00;
+            color: black;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #000;
+            border-top: 1px solid #333;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-link:hover {
+            color: #00ff00;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .icon {
+            font-size: 1.2rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #00ff00;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive styles */
+        @media (min-width: 768px) {
+            .header {
+                padding: 25px 40px;
+            }
+            
+            .main-content {
+                padding: 60px 40px;
+            }
+            
+            .welcome-text {
+                font-size: 3rem;
+            }
+            
+            .buttons {
+                flex-direction: row;
+                max-width: 500px;
+            }
+            
+            .btn {
+                flex: 1;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .welcome-text {
+                font-size: 3.5rem;
+            }
+            
+            .info-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <video class="video-bg" autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-background-500-large.mp4" type="video/mp4">
+        </video>
+
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-play-circle logo-icon"></i>
+                EDIREAR
+            </div>
+            <div class="menu-icon"><i class="fas fa-bars"></i></div>
+        </div>
+
+        <div class="main-content">
+            <h1 class="welcome-text pulse">Welcome to Edirear</h1>
+            
+            <div class="info-box">
+                <p class="owner-info">
+                    This platform, Edirear, is owned by <strong>SHAAF SAJJAD</strong>, The Rare Person, owner of RearIndustries.
+                </p>
+                <p class="company-info">
+                    RearIndustries is a leading tech company and we wish you to enjoy this app.
+                </p>
+                <p class="terms-info">
+                    We use your provided information according to our rules and regulations and we feel good if you agree to our terms and services.
+                </p>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-primary" id="agreeBtn">
+                    <i class="fas fa-check-circle icon"></i> I Agree
+                </button>
+                <button class="btn btn-secondary" id="privacyBtn">
+                    <i class="fas fa-shield-alt icon"></i> Privacy Policy
+                </button>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.youtube.com/@edirear" class="social-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/edirear" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/edirear" class="social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#" class="contact-link" id="contactLink">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('privacyBtn').addEventListener('click', function() {
+            window.location.href = 'https://edirear.github.io/privacypolicy';
+        });
+
+        document.getElementById('agreeBtn').addEventListener('click', function() {
+            window.location.href = 'https://edirear.github.io/next';
+        });
+
+        document.getElementById('contactLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'mailto:therareperson4@gmail.com?subject=Contact%20Edirear&body=Hello%20Edirear%20Team,';
+        });
+
+        // Add menu functionality
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            alert('Menu functionality would go here');
+        });
+    </script>
+</body>
+</html>
